@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "enableHibernateCache": false,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.manager.phathanhmaubaocao",
+    "packageFolder": "com/manager/phathanhmaubaocao",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "phathanhmaubaocao",
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "buildTool": "maven",
+    "serverPort": "8082",
+    "skipUserManagement": true,
+    "jhipsterVersion": "5.8.2",
+    "clientPackageManager": "npm",
+    "jwtSecretKey": "OWI3YjMxN2JmMGNhOTUxY2UwNTMyMWMyZDZiODFiMmJmMjFlYTE0NjljM2FkZjUxZTMzNzI2MTNmYjhiNDczNzQxZDYyNzBhYThhMDA1Zjc1N2I0MzA5NjcyZmYxZTRhMDFjMmQ0ODk5NzViNDZlYzQ2NWRkZTRkNmRmMmU5YTE=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "MauBaoCao"
+  ]
+}

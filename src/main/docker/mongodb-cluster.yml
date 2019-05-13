@@ -1,0 +1,16 @@
+version: '2'
+services:
+    phathanhmaubaocao-mongodb:
+        image: mongo:4.0.2
+        ports:
+            - "27017:27017"
+        command: mongos --configdb phathanhmaubaocao-mongodb-config
+    phathanhmaubaocao-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    phathanhmaubaocao-mongodb-config:
+        image: mongo:4.0.2
+        container_name: phathanhmaubaocao-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
