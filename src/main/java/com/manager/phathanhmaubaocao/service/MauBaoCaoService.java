@@ -1,5 +1,6 @@
 package com.manager.phathanhmaubaocao.service;
 
+import com.manager.phathanhmaubaocao.service.dto.CreateMauBaoCaoDTO;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
 
 import java.util.List;
@@ -49,4 +50,5 @@ public interface MauBaoCaoService {
     void delete(String id);
 
 
+    MauBaoCaoDTO create(CreateMauBaoCaoDTO createMauBaoCaoDTO);
 }

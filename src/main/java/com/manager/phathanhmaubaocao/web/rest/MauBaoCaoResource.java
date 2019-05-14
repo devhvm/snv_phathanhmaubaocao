@@ -1,5 +1,6 @@
 package com.manager.phathanhmaubaocao.web.rest;
 import com.manager.phathanhmaubaocao.service.MauBaoCaoService;
+import com.manager.phathanhmaubaocao.service.dto.CreateMauBaoCaoDTO;
 import com.manager.phathanhmaubaocao.web.rest.errors.BadRequestAlertException;
 import com.manager.phathanhmaubaocao.web.rest.util.HeaderUtil;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
@@ -36,17 +37,15 @@ public class MauBaoCaoResource {
     /**
      * POST  /mau-bao-caos : Create a new mauBaoCao.
      *
-     * @param mauBaoCaoDTO the mauBaoCaoDTO to create
+     * @param createMauBaoCaoDTO the mauBaoCaoDTO to create
      * @return the ResponseEntity with status 201 (Created) and with body the new mauBaoCaoDTO, or with status 400 (Bad Request) if the mauBaoCao has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/mau-bao-cao")
-    public ResponseEntity<MauBaoCaoDTO> createMauBaoCao(@Valid @RequestBody MauBaoCaoDTO mauBaoCaoDTO) throws URISyntaxException {
-        log.debug("REST request to save MauBaoCao : {}", mauBaoCaoDTO);
-        if (mauBaoCaoDTO.getId() != null) {
-            throw new BadRequestAlertException("A new mauBaoCao cannot already have an ID", ENTITY_NAME, "idexists");
-        }
-        MauBaoCaoDTO result = mauBaoCaoService.save(mauBaoCaoDTO);
+    @PostMapping("/tao-mau-bao-cao")
+    public ResponseEntity<MauBaoCaoDTO> createMauBaoCao(@Valid @RequestBody CreateMauBaoCaoDTO createMauBaoCaoDTO) throws URISyntaxException {
+        log.debug("REST request to save MauBaoCao : {}", createMauBaoCaoDTO);
+
+        MauBaoCaoDTO result = mauBaoCaoService.create(createMauBaoCaoDTO);
         return ResponseEntity.created(new URI("/api/mau-bao-caos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);

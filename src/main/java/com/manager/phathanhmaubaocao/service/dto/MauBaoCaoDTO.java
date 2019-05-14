@@ -50,13 +50,19 @@ public class MauBaoCaoDTO implements Serializable {
 
     private List<DuLieuTienTrinhDTO> duLieuTienTrinhs = new ArrayList<>();
 
-    @NotNull
-    private String tienTrinhCode;
-    @NotNull
-    private Long quyTrinhDonViId;
-    @NotNull
-    private String quyTrinhDonViName;
 
+    public MauBaoCaoDTO(@NotNull String mauBaoCaoCode, @NotNull String name, @NotNull CustomTypeDTO kyCongBo, @NotNull CustomTypeDTO mauPhatHanh, @NotNull LoaiBaoCaoDTO loaiBaoCao, @NotNull String coQuanHanhChinhCode, @NotNull LocalDateTime hanNopHoSo, StatusDTO status, List<TieuChiDetailDTO> tieuChiDetails, List<DuLieuTienTrinhDTO> duLieuTienTrinhs) {
+        this.mauBaoCaoCode = mauBaoCaoCode;
+        this.name = name;
+        this.kyCongBo = kyCongBo;
+        this.mauPhatHanh = mauPhatHanh;
+        this.loaiBaoCao = loaiBaoCao;
+        this.coQuanHanhChinhCode = coQuanHanhChinhCode;
+        this.hanNopHoSo = hanNopHoSo;
+        this.status = status;
+        this.tieuChiDetails = tieuChiDetails;
+        this.duLieuTienTrinhs = duLieuTienTrinhs;
+    }
 
     public String getId() {
         return id;
@@ -146,29 +152,7 @@ public class MauBaoCaoDTO implements Serializable {
         this.duLieuTienTrinhs = duLieuTienTrinhs;
     }
 
-    public String getTienTrinhCode() {
-        return tienTrinhCode;
-    }
 
-    public void setTienTrinhCode(String tienTrinhCode) {
-        this.tienTrinhCode = tienTrinhCode;
-    }
-
-    public Long getQuyTrinhDonViId() {
-        return quyTrinhDonViId;
-    }
-
-    public void setQuyTrinhDonViId(Long quyTrinhDonViId) {
-        this.quyTrinhDonViId = quyTrinhDonViId;
-    }
-
-    public String getQuyTrinhDonViName() {
-        return quyTrinhDonViName;
-    }
-
-    public void setQuyTrinhDonViName(String quyTrinhDonViName) {
-        this.quyTrinhDonViName = quyTrinhDonViName;
-    }
 
     @Override
     public boolean equals(Object o) {
