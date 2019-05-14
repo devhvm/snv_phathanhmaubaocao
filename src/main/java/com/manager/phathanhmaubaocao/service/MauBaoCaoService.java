@@ -35,9 +35,18 @@ public interface MauBaoCaoService {
     Optional<MauBaoCaoDTO> findOne(String id);
 
     /**
+     * Get the "mauBaoCaoCode" mauBaoCao.
+     *
+     * @param mauBaoCaoCode the mauBaoCaoCode of the entity
+     * @return the entity
+     */
+    Optional<MauBaoCaoDTO> findOneByMauPhatHanhCode(String mauBaoCaoCode);
+    /**
      * Delete the "id" mauBaoCao.
      *
      * @param id the id of the entity
      */
     void delete(String id);
+
+
 }

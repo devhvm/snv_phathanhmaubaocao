@@ -40,7 +40,7 @@ public class MauBaoCaoResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new mauBaoCaoDTO, or with status 400 (Bad Request) if the mauBaoCao has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/mau-bao-caos")
+    @PostMapping("/mau-bao-cao")
     public ResponseEntity<MauBaoCaoDTO> createMauBaoCao(@Valid @RequestBody MauBaoCaoDTO mauBaoCaoDTO) throws URISyntaxException {
         log.debug("REST request to save MauBaoCao : {}", mauBaoCaoDTO);
         if (mauBaoCaoDTO.getId() != null) {

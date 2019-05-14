@@ -2,7 +2,6 @@ package com.manager.phathanhmaubaocao.web.rest;
 
 import com.manager.phathanhmaubaocao.PhathanhmaubaocaoApp;
 
-import com.manager.phathanhmaubaocao.domain.MauBaoCao;
 import com.manager.phathanhmaubaocao.repository.MauBaoCaoRepository;
 import com.manager.phathanhmaubaocao.service.MauBaoCaoService;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
