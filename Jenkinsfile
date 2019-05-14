@@ -43,7 +43,7 @@ node {
 
         sh "cp -R src/main/docker target/"
         sh "cp target/*.war target/docker/"
-        sh "docker system prune -a -f --volumes"
+        //sh "docker system prune -a -f --volumes"
 
         echo 'I only execute on the development branch'
         try {
