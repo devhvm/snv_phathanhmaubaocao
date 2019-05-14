@@ -1,7 +1,8 @@
 package com.manager.phathanhmaubaocao.service.mapper;
 
-import com.manager.donviphathanh.domain.CustomType;
-import com.manager.donviphathanh.service.dto.CustomTypeDTO;
+
+import com.manager.phathanhmaubaocao.domain.CustomType;
+import com.manager.phathanhmaubaocao.service.dto.CustomTypeDTO;
 import org.mapstruct.Mapper;
 
 /**

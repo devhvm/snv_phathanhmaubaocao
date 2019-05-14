@@ -1,7 +1,8 @@
 package com.manager.phathanhmaubaocao.client;
 
-import com.manager.donviphathanh.service.dto.common.coquanchutri.TieuChiDetailDTO;
-import com.manager.donviphathanh.service.dto.common.loaibaocao.LoaiBaoCaoDTO;
+
+import com.manager.phathanhmaubaocao.service.dto.common.coquanchutri.TieuChiDetailDTO;
+import com.manager.phathanhmaubaocao.service.dto.common.loaibaocao.LoaiBaoCaoDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

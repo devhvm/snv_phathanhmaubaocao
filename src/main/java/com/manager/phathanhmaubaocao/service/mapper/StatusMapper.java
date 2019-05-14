@@ -1,7 +1,8 @@
 package com.manager.phathanhmaubaocao.service.mapper;
 
-import com.manager.donviphathanh.domain.enumeration.Status;
-import com.manager.donviphathanh.service.dto.StatusDTO;
+
+import com.manager.phathanhmaubaocao.domain.enumeration.Status;
+import com.manager.phathanhmaubaocao.service.dto.StatusDTO;
 import org.mapstruct.Mapper;
 
 /**
