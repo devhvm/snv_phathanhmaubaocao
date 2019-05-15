@@ -2,13 +2,10 @@ package com.manager.phathanhmaubaocao.service.dto;
 
 import com.manager.phathanhmaubaocao.service.dto.common.coquanchutri.TieuChiDetailDTO;
 import com.manager.phathanhmaubaocao.service.dto.common.loaibaocao.LoaiBaoCaoDTO;
-import com.manager.phathanhmaubaocao.service.dto.quytrinhdonvi.DuLieuTienTrinhDTO;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class CreateMauBaoCaoDTO {
 

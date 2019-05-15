@@ -1,6 +1,7 @@
 package com.manager.phathanhmaubaocao.web.rest;
 import com.manager.phathanhmaubaocao.service.MauBaoCaoService;
 import com.manager.phathanhmaubaocao.service.dto.CreateMauBaoCaoDTO;
+import com.manager.phathanhmaubaocao.service.dto.quytrinhdonvi.DuLieuTienTrinhDTO;
 import com.manager.phathanhmaubaocao.web.rest.errors.BadRequestAlertException;
 import com.manager.phathanhmaubaocao.web.rest.util.HeaderUtil;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
@@ -50,7 +51,17 @@ public class MauBaoCaoResource {
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
+    @PutMapping("/mau-bao-cao/{mauBaoCaoCode}/cap-nhat-quy-trinh")
+    public ResponseEntity<DuLieuTienTrinhDTO> updateMauPhatHanh(@PathVariable String mauBaoCaoCode, @Valid @RequestBody DuLieuTienTrinhDTO duLieuTienTrinh) {
+        log.debug("REST request to  update MauBaoCao : {}", mauBaoCaoCode);
 
+        DuLieuTienTrinhDTO result = mauBaoCaoService.updateQuyTrinh(mauBaoCaoCode, duLieuTienTrinh).get();
+
+        return ResponseEntity.ok()
+                .headers(HeaderUtil.createEntityUpdateAlert("DuLieuTienTrinh", result.getId().toString()))
+                .body(result);
+
+    }
     /**
      * PUT  /mau-bao-caos : Updates an existing mauBaoCao.
      *

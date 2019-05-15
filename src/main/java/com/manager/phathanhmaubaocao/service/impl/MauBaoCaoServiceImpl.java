@@ -4,15 +4,12 @@ import com.manager.phathanhmaubaocao.client.CommonServiceClient;
 import com.manager.phathanhmaubaocao.client.QuyTrinhDonViServiceClient;
 import com.manager.phathanhmaubaocao.domain.DuLieuTienTrinh;
 import com.manager.phathanhmaubaocao.domain.MauBaoCao;
-import com.manager.phathanhmaubaocao.domain.enumeration.Status;
 import com.manager.phathanhmaubaocao.security.SecurityUtils;
 import com.manager.phathanhmaubaocao.service.MauBaoCaoService;
 import com.manager.phathanhmaubaocao.repository.MauBaoCaoRepository;
 import com.manager.phathanhmaubaocao.service.dto.CreateMauBaoCaoDTO;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
 import com.manager.phathanhmaubaocao.service.dto.StatusDTO;
-import com.manager.phathanhmaubaocao.service.dto.common.loaibaocao.LoaiBaoCaoDTO;
-import com.manager.phathanhmaubaocao.service.dto.common.loaibaocao.PhamViDetailDTO;
 import com.manager.phathanhmaubaocao.service.dto.quytrinhdonvi.DuLieuTienTrinhDTO;
 import com.manager.phathanhmaubaocao.service.mapper.DuLieuTienTrinhMapper;
 import com.manager.phathanhmaubaocao.service.mapper.MauBaoCaoMapper;
@@ -164,5 +161,20 @@ public class MauBaoCaoServiceImpl implements MauBaoCaoService {
     public void delete(String id) {
         log.debug("Request to delete MauBaoCao : {}", id);
         mauBaoCaoRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<DuLieuTienTrinhDTO> updateQuyTrinh(String mauBaoCaoCode, DuLieuTienTrinhDTO duLieuTienTrinhDTO) {
+        Optional<MauBaoCao> mauPhatHanhOptional = mauBaoCaoRepository.findByMauBaoCaoCode(mauBaoCaoCode);
+
+        MauBaoCao mauBaoCao = mauPhatHanhOptional.orElseThrow(()->new RuntimeException("Mau bao cao khong ton tai."));
+
+        DuLieuTienTrinh duLieuTienTrinh = duLieuTienTrinhMapper.toEntity(duLieuTienTrinhDTO);
+
+        mauBaoCao.getDuLieuTienTrinhs().add(duLieuTienTrinh);
+        mauBaoCao.setStatus(duLieuTienTrinh.getStatus());
+        mauBaoCaoRepository.save(mauBaoCao);
+
+        return Optional.of(duLieuTienTrinhMapper.toDto(duLieuTienTrinh));
     }
 }

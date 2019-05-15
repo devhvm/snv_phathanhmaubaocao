@@ -2,6 +2,7 @@ package com.manager.phathanhmaubaocao.service;
 
 import com.manager.phathanhmaubaocao.service.dto.CreateMauBaoCaoDTO;
 import com.manager.phathanhmaubaocao.service.dto.MauBaoCaoDTO;
+import com.manager.phathanhmaubaocao.service.dto.quytrinhdonvi.DuLieuTienTrinhDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -51,4 +52,6 @@ public interface MauBaoCaoService {
 
 
     MauBaoCaoDTO create(CreateMauBaoCaoDTO createMauBaoCaoDTO);
+
+    Optional<DuLieuTienTrinhDTO> updateQuyTrinh(String mauPhatHanhCode, DuLieuTienTrinhDTO duLieuTienTrinh);
 }
