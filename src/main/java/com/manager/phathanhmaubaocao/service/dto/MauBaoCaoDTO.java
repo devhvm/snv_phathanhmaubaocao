@@ -50,6 +50,8 @@ public class MauBaoCaoDTO implements Serializable {
 
     private List<DuLieuTienTrinhDTO> duLieuTienTrinhs = new ArrayList<>();
 
+    public MauBaoCaoDTO() {
+    }
 
     public MauBaoCaoDTO(@NotNull String mauBaoCaoCode, @NotNull String name, @NotNull CustomTypeDTO kyCongBo, @NotNull CustomTypeDTO mauPhatHanh, @NotNull LoaiBaoCaoDTO loaiBaoCao, @NotNull String coQuanHanhChinhCode, @NotNull LocalDateTime hanNopHoSo, StatusDTO status, List<TieuChiDetailDTO> tieuChiDetails, List<DuLieuTienTrinhDTO> duLieuTienTrinhs) {
         this.mauBaoCaoCode = mauBaoCaoCode;
