@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.manager.phathanhmaubaocao.service.dto.common.coquanchutri.TieuChiDetailDTO;
 import com.manager.phathanhmaubaocao.service.dto.common.loaibaocao.LoaiBaoCaoDTO;
 import com.manager.phathanhmaubaocao.service.dto.quytrinhdonvi.DuLieuTienTrinhDTO;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 /**
  * A DTO for the MauBaoCao entity.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MauBaoCaoDTO implements Serializable {
 
 
