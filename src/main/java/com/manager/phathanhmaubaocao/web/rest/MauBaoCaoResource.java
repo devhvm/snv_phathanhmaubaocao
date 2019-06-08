@@ -93,7 +93,16 @@ public class MauBaoCaoResource {
         log.debug("REST request to get all MauBaoCaos");
         return mauBaoCaoService.findAll();
     }
-
+    /**
+     * GET  /mau-bao-caos : get all the mauBaoCaos.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of mauBaoCaos in body
+     */
+    @GetMapping("/mau-bao-cao/signed")
+    public List<MauBaoCaoDTO> getAllMauBaoCaoSigned() {
+        log.debug("REST request to get all MauBaoCaos");
+        return mauBaoCaoService.findAllSigned();
+    }
     /**
      * GET  /mau-bao-caos/:id : get the "id" mauBaoCao.
      *

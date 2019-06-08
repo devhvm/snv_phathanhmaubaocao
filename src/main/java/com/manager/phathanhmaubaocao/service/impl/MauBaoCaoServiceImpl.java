@@ -4,6 +4,7 @@ import com.manager.phathanhmaubaocao.client.CommonServiceClient;
 import com.manager.phathanhmaubaocao.client.QuyTrinhDonViServiceClient;
 import com.manager.phathanhmaubaocao.domain.DuLieuTienTrinh;
 import com.manager.phathanhmaubaocao.domain.MauBaoCao;
+import com.manager.phathanhmaubaocao.domain.enumeration.Status;
 import com.manager.phathanhmaubaocao.security.SecurityUtils;
 import com.manager.phathanhmaubaocao.service.MauBaoCaoService;
 import com.manager.phathanhmaubaocao.repository.MauBaoCaoRepository;
@@ -136,6 +137,14 @@ public class MauBaoCaoServiceImpl implements MauBaoCaoService {
         return mauBaoCaoRepository.findAll().stream()
             .map(mauBaoCaoMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
+    }
+
+    @Override
+    public List<MauBaoCaoDTO> findAllSigned() {
+        log.debug("Request to get all MauBaoCaos");
+        return mauBaoCaoRepository.findAllByStatus(Status.SIGNED).stream()
+                .map(mauBaoCaoMapper::toDto)
+                .collect(Collectors.toCollection(LinkedList::new));
     }
 
 

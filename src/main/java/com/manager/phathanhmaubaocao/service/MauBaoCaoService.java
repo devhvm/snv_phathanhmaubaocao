@@ -27,6 +27,7 @@ public interface MauBaoCaoService {
      */
     List<MauBaoCaoDTO> findAll();
 
+    List<MauBaoCaoDTO> findAllSigned();
 
     /**
      * Get the "id" mauBaoCao.
